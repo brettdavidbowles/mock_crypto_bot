@@ -6,6 +6,12 @@ import csv
 from six.moves import urllib
 import requests
 
+from binance.client import Client
+
+API_Key='4a2L2JdIsUGshgaCBZF56bhdTMWikgdOgQtgzkawtr7MfyM4rNfXOHztHEEzlz0S' 
+Secret_Key='5d2C7XDQ7kwC51WjycVZZssr0eB8PQW5XfYzGdV9ndyxTF6ZqdoWnknnwl199D3o'
+client = Client(API_Key, Secret_Key, tld='us')
+client.API_URL='https://testnet.binance.vision/api'
 
 def get_data():
   url = 'https://api.binance.com/api/v3/avgPrice?symbol=BNBBTC'
