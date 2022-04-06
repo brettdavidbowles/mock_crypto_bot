@@ -1,0 +1,1 @@
+worker: python mock_data_script.py
