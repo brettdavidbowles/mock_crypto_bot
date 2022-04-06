@@ -18,7 +18,7 @@ def get_data():
   data = requests.get(url).json()
   print(data)
 
-
+get_data()
 # assets_url = "https://data.messari.io/api/v1/assets"
 # assets_bytes = urllib.request.urlopen(assets_url).read()
 # assets_json = assets_bytes.decode('utf8').replace("'", '"')
