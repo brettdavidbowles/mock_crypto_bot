@@ -4,19 +4,27 @@ import random
 import json
 import csv
 from six.moves import urllib
+import requests
 
-assets_url = "https://data.messari.io/api/v1/assets"
-assets_bytes = urllib.request.urlopen(assets_url).read()
-assets_json = assets_bytes.decode('utf8').replace("'", '"')
-assets_dict = json.loads(assets_json)
 
-ticker_list = []
-for asset in assets_dict["data"]:
-    if (asset["symbol"] != "btc") and (asset["symbol"] != "eth") and (asset["symbol"] != "ltc"):
-        pass
-    else:
-        ticker_list.append(asset["symbol"])
-        print(ticker_list)
+def get_data():
+  url = 'https://api.binance.com/api/v3/avgPrice?symbol=BNBBTC'
+  data = requests.get(url).json()
+  print(data)
+
+
+# assets_url = "https://data.messari.io/api/v1/assets"
+# assets_bytes = urllib.request.urlopen(assets_url).read()
+# assets_json = assets_bytes.decode('utf8').replace("'", '"')
+# assets_dict = json.loads(assets_json)
+
+# ticker_list = []
+# for asset in assets_dict["data"]:
+#     if (asset["symbol"] != "btc") and (asset["symbol"] != "eth") and (asset["symbol"] != "ltc"):
+#         pass
+#     else:
+#         ticker_list.append(asset["symbol"])
+#         print(ticker_list)
 
 # query = """
 #     mutation transactionCreate(
