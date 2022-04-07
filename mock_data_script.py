@@ -9,7 +9,6 @@ import json
 def coin_price(coin):
   url = 'https://api.binance.com/api/v3/avgPrice?symbol=' + coin
   price = requests.get(url).json()['price']
-  # data_dict = json.loads(data)
   return price
 
 query = """
