@@ -73,7 +73,7 @@ def send_mock_data(variables):
 coins = [ 'BTCUSDT', 'ETHUSDT', 'LTCUSDT' ]
 
 for coin in coins:
-  transaction_price_deviation_from_contemporary_price = random.random()
+  transaction_price_deviation_from_contemporary_price = random.random() * 10
   price = float(coin_price(coin))
   quanity = random.random()
   transactionPrice = price - transaction_price_deviation_from_contemporary_price
@@ -93,7 +93,7 @@ for coin in coins:
   )
 
 for coin in coins:
-  transaction_price_deviation_from_contemporary_price = random.random()
+  transaction_price_deviation_from_contemporary_price = random.random() * 10
   price = float(coin_price(coin))
   quanity = random.random()
   transactionPrice = price + transaction_price_deviation_from_contemporary_price
@@ -108,6 +108,26 @@ for coin in coins:
       'transaction_price': transactionPrice,
       'contemporary_coin_price': price,
       'profit': ( quanity * transactionPrice ) - ( quanity * price ),
+      'transaction_name': 'mock BTCUSDT' + datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+    }
+  )
+
+for coin in coins:
+  transaction_price_deviation_from_contemporary_price = random.random()
+  price = float(coin_price(coin))
+  quanity = random.random()
+  transactionPrice = price - transaction_price_deviation_from_contemporary_price
+  send_mock_data(
+    {
+      'bot_name': 'mockmarketbot',
+      'coin_abbrev': coin,
+      'username': 'mockuser',
+      'api_key': 'cfc1e3f4-5d07-49fc-9bbf-05ceeeffe626',
+      'is_sale': False,
+      'coin_quantity': quanity,
+      'transaction_price': transactionPrice,
+      'contemporary_coin_price': price,
+      'profit': ( quanity * price ) - ( quanity * transactionPrice ),
       'transaction_name': 'mock BTCUSDT' + datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
     }
   )
