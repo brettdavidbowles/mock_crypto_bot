@@ -102,3 +102,7 @@ currentCoins = [ 'BTCUSDT', 'ETHUSDT', 'LTCUSDT' ]
 send_mock_data('mockbot', False, currentCoins)
 send_mock_data('mockbot', True, currentCoins)
 send_mock_data('mockmarketbot', False, currentCoins)
+send_mock_data('mockbot2', False, currentCoins)
+send_mock_data('mockbot2', True, currentCoins)
+send_mock_data('mockbot3', False, currentCoins)
+send_mock_data('mockbot3', True, currentCoins)
